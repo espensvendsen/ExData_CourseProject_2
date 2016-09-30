@@ -11,7 +11,7 @@ SCC <- readRDS("Source_Classification_Code.rds")
 # Subset data sets
 SCC_motor <- SCC[grepl("motor|vehicle", SCC$EI.Sector, ignore.case=TRUE), ]
 NEI_motor <- NEI[NEI$SCC %in% SCC_motor$SCC & NEI$fips %in% c("24510", "06037"), ]
-NEI_motor$city <- ifelse(NEI_motor$fips == "24510", "Baltimore", "California") 
+NEI_motor$city <- ifelse(NEI_motor$fips == "24510", "Baltimore", "Los Angeles County") 
 
 # Plot
 png("plot6.png", width=480, height=480, units="px", bg="transparent")
